@@ -7,15 +7,15 @@
 <div class="row">
     <aside class="column">
         <div class="side-nav">
-            <h4 class="heading"><?= __('Actions') ?></h4>
-            <?= $this->Html->link(__('List Fruits'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
+            <h4 class="heading"><?= __('Ações') ?></h4>
+            <?= $this->Html->link(__('Listar Frutas'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
         </div>
     </aside>
     <div class="column column-80">
-        <div class="fruits form content">
+        <div class="frutas form content">
             <?= $this->Form->create($fruit) ?>
             <fieldset>
-                <legend><?= __('Add Fruit') ?></legend>
+                <legend><?= __('Adicionar Fruta') ?></legend>
                 <?php
                     echo $this->Form->control('name', ['label' => 'Nome da Fruta']);
                     echo $this->Form->control('classification', [

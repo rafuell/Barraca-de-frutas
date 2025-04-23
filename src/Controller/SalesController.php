@@ -123,10 +123,10 @@ class SalesController extends AppController
         if ($this->request->is(['patch', 'post', 'put'])) {
             $sale = $this->Sales->patchEntity($sale, $this->request->getData());
             if ($this->Sales->save($sale)) {
-                $this->Flash->success(__('The sale has been saved.'));
+                $this->Flash->success(__('A venda foi salva.'));
                 return $this->redirect(['action' => 'index']);
             }
-            $this->Flash->error(__('The sale could not be saved. Please, try again.'));
+            $this->Flash->error(__('A venda não pôde ser salva. Por favor, tente novamente.'));
         }
         $users = $this->Sales->Users->find('list', ['limit' => 200])->all();
         $this->set(compact('sale', 'users'));
@@ -137,9 +137,9 @@ class SalesController extends AppController
         $this->request->allowMethod(['post', 'delete']);
         $sale = $this->Sales->get($id);
         if ($this->Sales->delete($sale)) {
-            $this->Flash->success(__('The sale has been deleted.'));
+            $this->Flash->success(__('A venda foi deletada.'));
         } else {
-            $this->Flash->error(__('The sale could not be deleted. Please, try again.'));
+            $this->Flash->error(__('A venda não pôde ser deletada. Por favor, tente novamente.'));
         }
 
         return $this->redirect(['action' => 'index']);

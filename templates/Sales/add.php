@@ -9,15 +9,15 @@
 <div class="row">
     <aside class="column">
         <div class="side-nav">
-            <h4 class="heading"><?= __('Actions') ?></h4>
-            <?= $this->Html->link(__('List Sales'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
+            <h4 class="heading"><?= __('Ações') ?></h4>
+            <?= $this->Html->link(__('Listar Vendas'), ['action' => 'index'], ['class' => 'side-nav-item']) ?>
         </div>
     </aside>
     <div class="column column-80">
         <div class="sales form content">
             <?= $this->Form->create($sale) ?>
             <fieldset>
-                <legend><?= __('Add Sale') ?></legend>
+                <legend><?= __('Adicionar Venda') ?></legend>
 
                 <!-- Campo para selecionar o vendedor (automaticamente usa o vendedor logado) -->
                 <?= $this->Form->control('user_id', ['type' => 'hidden', 'value' => $this->request->getSession()->read('user.id')]); ?>
@@ -53,7 +53,7 @@
 
                 <!-- Exibição do valor total -->
                 <div>
-                    <p><strong>Total:</strong> <?= h($total) ?> R$</p> <!-- Exibe o total calculado -->
+                    <p><strong>Total:</strong> R$ <?= number_format($total, 2, ',', '.') ?></p> <!-- Exibe o total com formatação de centavos -->
                 </div>
 
             </fieldset>
